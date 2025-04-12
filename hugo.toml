@@ -1,0 +1,11 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'hugo-bearblog-neo'
+
+[params]
+    upvote = true
+    upvoteURL = "post-upvote.zinuo-lee.workers.dev/" 
+    postSearch = true
+    groupByYear = true
+    toc = true

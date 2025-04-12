@@ -1,0 +1,25 @@
+# Hugo 默认输出目录
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Hugo 缓存目录
+.hugo_build.lock
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 和编辑器文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 依赖目录（如果您使用 npm/yarn 管理前端依赖）
+/node_modules/
+
+# 环境变量文件
+.env
+.env.*
