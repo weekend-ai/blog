@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://blog.zinuo.me/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'ZINUO ME'
 theme = 'hugo-bearblog-neo'
 
 [params]
