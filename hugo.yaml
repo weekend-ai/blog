@@ -1,0 +1,18 @@
+baseURL: 'https://blog.zinuo.me/'
+languageCode: 'en-us'
+title: 'ZINUO ME'
+theme: 'hugo-bearblog-neo' # 旧的主题设置，先注释掉或删除
+# theme: 'PaperMod' # 设置新的主题为 PaperMod
+
+params:
+  upvote: true
+  upvoteURL: "post-upvote.zinuo-lee.workers.dev/" 
+  postSearch: true
+  groupByYear: true
+  toc: true
+
+# 添加 Hugo Modules 配置
+# module:
+#   imports:
+#     # - path: github.com/zino-lee/hugo-bearblog-neo # 错误的路径
+#     - path: github.com/rokcso/hugo-bearblog-neo # 正确的路径
