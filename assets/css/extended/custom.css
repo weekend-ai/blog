@@ -1,0 +1,27 @@
+.upvote-btn {
+    display: inline-flex; /* 或者 flex，如果按钮本身是块级元素 */
+    align-items: center;  /* 关键：垂直居中对齐子元素 */
+    justify-content: center; /* 可选：如果希望内容水平居中按钮 */
+    gap: 0.25em; /* 可选：在 SVG 和数字之间添加一点间隙，em 单位相对于字体大小 */
+    /* 其他您可能已有的按钮样式，如 padding, border, background 等 */
+    /* 例如：*/
+    /* padding: 0.5em 0.75em; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* cursor: pointer; */
+  }
+  
+.upvote-btn svg {
+/* 通常 SVG 默认就会很好地配合 flexbox 对齐 */
+/* 如果 SVG 尺寸不合适，可以在这里调整 width 和 height */
+width: 1.2em; /* 示例大小，根据您的设计调整 */
+height: 1.2em; /* 示例大小 */
+/* fill: currentColor; /* 使 SVG 颜色与文本颜色一致，如果 SVG 内部没有指定颜色 */
+}
+
+.upvote-btn .upvote-count {
+/* 通常也不需要特别的样式来配合 flexbox 对齐 */
+/* 如果需要，可以调整 font-size, line-height 等 */
+font-size: 1em; /* 确保字体大小与预期一致 */
+line-height: 1; /* 避免额外的行高影响对齐 */
+}

@@ -1,0 +1,146 @@
+{{/* File: layouts/partials/upvote.html */}}
+{{ $upvoteEnabled := default .Site.Params.upvote .Params.upvote }}
+{{ $upvoteURL := .Site.Params.upvoteURL }}
+{{/* .Slug is preferred, fallback to .File.UniqueID if .Slug is not available (e.g., not a page bundle or not set) */}}
+{{ $slug := .Slug | default .File.UniqueID }}
+
+{{/* Proceed only if upvote is enabled, URL is set, and we have a slug */}}
+{{ if and $upvoteEnabled $upvoteURL $slug }}
+<div class="upvote-container">
+  <small class="upvote">
+    {{/* Using dynamic IDs based on slug to ensure uniqueness if partial were ever used multiple times on one page */}}
+    <button class="upvote-btn" id="upvote-btn-{{ $slug }}" aria-label="Upvote this post">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+      <polyline points="17 11 12 6 7 11"></polyline>
+      <polyline points="17 18 12 13 7 18"></polyline>
+      </svg>
+      <span class="upvote-count" id="upvote-count-{{ $slug }}">0</span>
+    </button>
+  </small>
+</div>
+
+<script>
+  (function() { // IIFE to scope variables and prevent global pollution
+    const slug = '{{ $slug }}';
+    const upvoteButtonId = 'upvote-btn-' + slug;
+    const upvoteCountId = 'upvote-count-' + slug;
+    
+    const rawUpvoteApiUrlFromHugo = '{{ $upvoteURL }}';
+    console.log('[Upvote Script] Raw upvoteApiUrl from Hugo for slug "' + slug + '":', rawUpvoteApiUrlFromHugo); // For debugging
+
+    let baseApiUrlObject;
+    let hasAlreadyUpvoted = false;
+    let currentUpvoteBtn;
+    let currentUpvoteCountSpan;
+
+    try {
+      // Ensure rawUpvoteApiUrlFromHugo is a valid, absolute URL.
+      // If it doesn't end with a '/', the URL constructor will handle it correctly when resolving paths.
+      baseApiUrlObject = new URL(rawUpvoteApiUrlFromHugo);
+    } catch (e) {
+      console.error('[Upvote Script] Failed to construct base API URL from: "' + rawUpvoteApiUrlFromHugo + '". Is .Site.Params.upvoteURL a FQDN (e.g. https://example.com/api/)? Error: ', e);
+      // Disable button if base URL is invalid
+      const btn = document.getElementById(upvoteButtonId);
+      if (btn) {
+        btn.disabled = true;
+        btn.title = "Upvote feature is misconfigured.";
+      }
+      return; // Stop execution for this instance if base URL is invalid
+    }
+
+    function initializeUpvoteInstance(buttonId, countId, postSlug) {
+      currentUpvoteBtn = document.getElementById(buttonId);
+      currentUpvoteCountSpan = document.getElementById(countId);
+
+      if (!currentUpvoteBtn || !currentUpvoteCountSpan) {
+        // console.warn(`[Upvote Script] Upvote elements not found for slug: ${postSlug}. Button ID: ${buttonId}, Count ID: ${countId}`);
+        return;
+      }
+
+      fetchInitialCount(postSlug);
+      currentUpvoteBtn.addEventListener('click', function() {
+        processUpvote(postSlug);
+      });
+    }
+
+    async function processUpvote(currentPostSlug) {
+      if (hasAlreadyUpvoted) {
+        // console.log('[Upvote Script] You have already upvoted this post: ' + currentPostSlug);
+        return;
+      }
+
+      currentUpvoteBtn.disabled = true;
+      currentUpvoteBtn.classList.add('upvoted');
+      currentUpvoteCountSpan.innerText = parseInt(currentUpvoteCountSpan.innerText) + 1; // Optimistic update
+
+      try {
+        const upvoteRequestUrl = new URL('upvote', baseApiUrlObject).href;
+        // console.log('[Upvote Script] Sending upvote to:', upvoteRequestUrl); // For debugging
+        const response = await fetch(upvoteRequestUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ postId: currentPostSlug, diff: 1 }),
+        });
+
+        if (response.ok) {
+          // console.log('[Upvote Script] Upvote successful for: ' + currentPostSlug);
+          hasAlreadyUpvoted = true;
+          await fetchInitialCount(currentPostSlug, 3); // Re-fetch to confirm and get server's hasUpvoted status
+        } else {
+          // console.log('[Upvote Script] Upvote failed for: ' + currentPostSlug + ', status: ' + response.status);
+          currentUpvoteCountSpan.innerText = parseInt(currentUpvoteCountSpan.innerText) - 1; // Revert optimistic update
+          currentUpvoteBtn.classList.remove('upvoted');
+          currentUpvoteBtn.disabled = false;
+        }
+      } catch (error) {
+        // console.error('[Upvote Script] Error during upvote for ' + currentPostSlug + ': ', error);
+        currentUpvoteCountSpan.innerText = parseInt(currentUpvoteCountSpan.innerText) - 1; // Revert
+        currentUpvoteBtn.classList.remove('upvoted');
+        currentUpvoteBtn.disabled = false;
+      }
+    }
+
+    async function fetchInitialCount(currentPostSlug, retryCount = 0) {
+      if (!currentUpvoteBtn || !currentUpvoteCountSpan) return;
+
+      try {
+        const countRequestUrl = new URL('count?post=' + currentPostSlug, baseApiUrlObject).href;
+        // console.log('[Upvote Script] Fetching count from:', countRequestUrl); // For debugging
+        const response = await fetch(countRequestUrl, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await response.json();
+
+        if (data.code === 0 && data.data) {
+          currentUpvoteCountSpan.innerText = data.data.count;
+          hasAlreadyUpvoted = data.data.hasUpvoted || false;
+          if (hasAlreadyUpvoted) {
+            currentUpvoteBtn.classList.add('upvoted');
+            currentUpvoteBtn.disabled = true; 
+          } else {
+            currentUpvoteBtn.classList.remove('upvoted');
+            currentUpvoteBtn.disabled = false;
+          }
+        } else {
+          // console.error('[Upvote Script] Failed to get upvote count for ' + currentPostSlug + ': ', data.msg || 'Unknown error');
+        }
+      } catch (error) {
+        // console.error('[Upvote Script] Error fetching count for ' + currentPostSlug + ': ', error);
+        if (retryCount > 0) {
+          setTimeout(() => fetchInitialCount(currentPostSlug, retryCount - 1), 1000);
+        }
+      }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeUpvoteInstance(upvoteButtonId, upvoteCountId, slug);
+        });
+    } else {
+        initializeUpvoteInstance(upvoteButtonId, upvoteCountId, slug);
+    }
+
+  })(); // End IIFE
+</script>
+{{ end }}

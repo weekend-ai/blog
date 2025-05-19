@@ -1,12 +1,31 @@
 baseURL: 'https://blog.zinuo.me/'
 languageCode: 'en-us'
-title: 'ZINUO ME'
-theme: 'hugo-bearblog-neo' # 旧的主题设置，先注释掉或删除
-# theme: 'PaperMod' # 设置新的主题为 PaperMod
+title: 'ZINUO HOME'
+theme: 'PaperMod' # 设置新的主题为 PaperMod
 
 params:
+  profileMode:
+    enabled: true
+    title: "Hi there, 👋" # optional default will be site title
+    subtitle: "I love AI and problem solving"
+    imageUrl: "images/avatar.png" # optional
+    imageTitle: "ZINUO" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Archive
+        url: "/archive"
+      - name: Github
+        url: "https://github.com/mbadala"
+
+  socialIcons: # optional
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/arnoldzl/"
+    - name: "instagram"
+      url: "https://www.instagram.com/arrrrrno/"
+  defaultTheme: auto
   upvote: true
-  upvoteURL: "post-upvote.zinuo-lee.workers.dev/" 
+  upvoteURL: "https://post-upvote.zinuo-lee.workers.dev/"
   postSearch: true
   groupByYear: true
   toc: true
