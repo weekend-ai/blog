@@ -25,3 +25,11 @@ height: 1.2em; /* 示例大小 */
 font-size: 1em; /* 确保字体大小与预期一致 */
 line-height: 1; /* 避免额外的行高影响对齐 */
 }
+
+.profile img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.profile img:hover {
+    transform: rotate(360deg);
+}

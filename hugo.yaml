@@ -1,4 +1,4 @@
-baseURL: 'https://zinuo.me/'
+baseURL: 'https://www.zinuo.me/'
 languageCode: 'en-us'
 title: 'ZINUO HOME'
 theme: 'PaperMod' # 设置新的主题为 PaperMod
@@ -7,7 +7,10 @@ params:
   profileMode:
     enabled: true
     title: "Hi there, 👋" # optional default will be site title
-    subtitle: "I love AI and problem solving"
+    subtitle: "Welcome to my space"
+    typeit_strings:
+      - "AI can build everything"
+      - "But it cannot replace human"
     imageUrl: "images/avatar.png" # optional
     imageTitle: "ZINUO" # optional
     imageWidth: 120 # custom size
