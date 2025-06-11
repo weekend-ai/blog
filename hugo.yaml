@@ -15,23 +15,26 @@ params:
     imageTitle: "ZINUO" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
-    buttons:
-      - name: Archive
-        url: "/archive"
-      - name: Github
-        url: "https://github.com/mbadala"
+  ShowBreadCrumbs: true
 
   socialIcons: # optional
     - name: "linkedin"
       url: "https://www.linkedin.com/in/arnoldzl/"
     - name: "instagram"
       url: "https://www.instagram.com/arrrrrno/"
+    - name: "github"
+      url: "https://github.com/mbadala"
   defaultTheme: auto
   upvote: true
   upvoteURL: "https://post-upvote.zinuo-lee.workers.dev/"
   postSearch: true
   groupByYear: true
   toc: true
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 # 添加 Hugo Modules 配置
 # module:

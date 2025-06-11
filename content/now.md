@@ -1,6 +1,7 @@
 +++
 title = "Now"
 menu = "main"
+weight = 10
 +++
 
 # Bear
