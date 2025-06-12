@@ -1,29 +1,53 @@
+defaultContentLanguage: "en"
+languages:
+  en:
+    languageCode: en-us
+    languageName: "English"
+    title: 'ZINUO HOME'
+    contentDir: "content/en"
+    weight: 1
+    params:
+      profileMode:
+        enabled: true
+        title: "Hi there, 👋"
+        subtitle: "Welcome to my space"
+        typeit_strings:
+          - "AI can build everything"
+          - "But it cannot replace human"
+        imageUrl: "images/avatar.png"
+        imageTitle: "ZINUO"
+        imageWidth: 120
+        imageHeight: 120
+  zh:
+    languageCode: zh-cn
+    languageName: "中文"
+    title: '子诺的主页'
+    contentDir: "content/zh"
+    weight: 2
+    params:
+      profileMode:
+        enabled: true
+        title: "你好, 👋"
+        subtitle: "欢迎来到我的空间"
+        typeit_strings:
+          - "AI 可以创造一切"
+          - "但它无法取代人类"
+        imageUrl: "images/avatar.png"
+        imageTitle: "ZINUO"
+        imageWidth: 120
+        imageHeight: 120
+
+# All other parameters that are not language-specific remain here
 baseURL: 'https://www.zinuo.me/'
-languageCode: 'en-us'
-title: 'ZINUO HOME'
-theme: 'PaperMod' # 设置新的主题为 PaperMod
+theme: 'PaperMod'
 
 params:
-  profileMode:
-    enabled: true
-    title: "Hi there, 👋" # optional default will be site title
-    subtitle: "Welcome to my space"
-    typeit_strings:
-      - "AI can build everything"
-      - "But it cannot replace human"
-    imageUrl: "images/avatar.png" # optional
-    imageTitle: "ZINUO" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
   ShowBreadCrumbs: true
-
   socialIcons: # optional
     - name: "linkedin"
       url: "https://www.linkedin.com/in/arnoldzl/"
     - name: "instagram"
       url: "https://www.instagram.com/arrrrrno/"
-    - name: "github"
-      url: "https://github.com/mbadala"
   defaultTheme: auto
   upvote: true
   upvoteURL: "https://post-upvote.zinuo-lee.workers.dev/"
