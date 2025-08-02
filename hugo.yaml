@@ -48,6 +48,8 @@ params:
       url: "https://www.linkedin.com/in/arnoldzl/"
     - name: "instagram"
       url: "https://www.instagram.com/arrrrrno/"
+    - name: "github"
+      url: "https://github.com/weekend-ai"
   defaultTheme: auto
   upvote: true
   upvoteURL: "https://post-upvote.zinuo-lee.workers.dev/"
