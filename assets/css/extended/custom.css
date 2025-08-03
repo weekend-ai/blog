@@ -33,3 +33,9 @@ line-height: 1; /* 避免额外的行高影响对齐 */
 .profile img:hover {
     transform: rotate(360deg);
 }
+
+#subtitle {
+    font-family: 'Courier New', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+}
