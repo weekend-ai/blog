@@ -1,31 +1,22 @@
+/* Existing: Upvote button styles */
 .upvote-btn {
-    display: inline-flex; /* 或者 flex，如果按钮本身是块级元素 */
-    align-items: center;  /* 关键：垂直居中对齐子元素 */
-    justify-content: center; /* 可选：如果希望内容水平居中按钮 */
-    gap: 0.25em; /* 可选：在 SVG 和数字之间添加一点间隙，em 单位相对于字体大小 */
-    /* 其他您可能已有的按钮样式，如 padding, border, background 等 */
-    /* 例如：*/
-    /* padding: 0.5em 0.75em; */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 4px; */
-    /* cursor: pointer; */
-  }
-  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+}
+
 .upvote-btn svg {
-/* 通常 SVG 默认就会很好地配合 flexbox 对齐 */
-/* 如果 SVG 尺寸不合适，可以在这里调整 width 和 height */
-width: 1.2em; /* 示例大小，根据您的设计调整 */
-height: 1.2em; /* 示例大小 */
-/* fill: currentColor; /* 使 SVG 颜色与文本颜色一致，如果 SVG 内部没有指定颜色 */
+    width: 1.2em;
+    height: 1.2em;
 }
 
 .upvote-btn .upvote-count {
-/* 通常也不需要特别的样式来配合 flexbox 对齐 */
-/* 如果需要，可以调整 font-size, line-height 等 */
-font-size: 1em; /* 确保字体大小与预期一致 */
-line-height: 1; /* 避免额外的行高影响对齐 */
+    font-size: 1em;
+    line-height: 1;
 }
 
+/* Existing: Profile image hover */
 .profile img {
     transition: transform 0.5s ease-in-out;
 }
@@ -34,8 +25,333 @@ line-height: 1; /* 避免额外的行高影响对齐 */
     transform: rotate(360deg);
 }
 
-#subtitle {
-    font-family: 'Courier New', sans-serif;
-    font-size: 1.2em;
-    font-weight: 400;
+/* ===== Landing Page Styles ===== */
+
+.landing-container {
+    max-width: var(--nav-width, 1024px);
+    margin: 0 auto;
+    padding: 0 var(--gap, 24px);
+}
+
+.landing-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border, #e0e0e0);
+}
+
+.landing-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary, #333);
+}
+
+/* Hero */
+.hero-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-avatar:hover {
+    transform: rotate(360deg);
+}
+
+.landing-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero-name {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--primary, #333);
+}
+
+.hero-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--secondary, #666);
+    margin-bottom: 1rem;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: var(--secondary, #666);
+    margin-bottom: 0.75rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-companies {
+    font-size: 0.85rem;
+    color: var(--secondary, #666);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    border: 1px solid var(--primary, #333);
+    border-radius: 6px;
+    color: var(--primary, #333);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.cta-btn:hover {
+    background: var(--primary, #333);
+    color: var(--theme, #fff);
+}
+
+.cta-primary {
+    background: var(--primary, #333);
+    color: var(--theme, #fff);
+}
+
+.cta-primary:hover {
+    opacity: 0.85;
+}
+
+.hero-statement {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--secondary, #666);
+    min-height: 1.5em;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    padding: 1.5rem;
+    border: 1px solid var(--border, #e0e0e0);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary, #333);
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--secondary, #666);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-list li {
+    font-size: 0.85rem;
+    color: var(--secondary, #666);
+    padding: 0.25rem 0;
+}
+
+.card-list li::before {
+    content: "→ ";
+    opacity: 0.5;
+}
+
+.card-compact {
+    padding: 1.25rem;
+}
+
+/* Tags */
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    background: var(--code-bg, #f5f5f5);
+    border-radius: 4px;
+    color: var(--secondary, #666);
+}
+
+/* Writing List */
+.writing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.writing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border, #e0e0e0);
+    text-decoration: none;
+    color: var(--primary, #333);
+    transition: padding-left 0.2s ease;
+}
+
+.writing-item:hover {
+    padding-left: 0.5rem;
+}
+
+.writing-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.writing-arrow {
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+/* Companies */
+.companies-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary, #666);
+    opacity: 0.7;
+}
+
+/* Contact */
+.landing-contact {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.contact-desc {
+    font-size: 1.1rem;
+    color: var(--secondary, #666);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.contact-link {
+    font-size: 0.9rem;
+    color: var(--secondary, #666);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.contact-link:hover {
+    border-bottom-color: var(--primary, #333);
+    color: var(--primary, #333);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .landing-hero {
+        padding: 4rem 0 3rem;
+        min-height: auto;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.1rem;
+    }
+
+    .cards-3,
+    .cards-2,
+    .cards-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-section {
+        padding: 3rem 0;
+    }
+
+    .companies-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cards-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

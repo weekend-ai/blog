@@ -1,6 +1,5 @@
 +++
 title = "Now"
-menu = "main"
 weight = 10
 +++
 

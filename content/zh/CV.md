@@ -1,6 +1,5 @@
 +++
 title = "简历"
-menu = "main"
 weight = 20
 +++
 

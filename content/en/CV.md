@@ -1,6 +1,5 @@
 +++
 title = "Resume"
-menu = "main"
 weight = 20
 +++
 

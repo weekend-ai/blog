@@ -6,44 +6,296 @@ languages:
     title: 'ZINUO HOME'
     contentDir: "content/en"
     weight: 1
+    menus:
+      main:
+        - name: Articles
+          url: /posts/
+          weight: 10
+        - name: Search
+          url: /search/
+          weight: 20
+        - name: Resume
+          url: /cv/
+          weight: 30
     params:
       profileMode:
-        enabled: true
-        title: "Hi there, 👋"
-        subtitle: "Welcome to my space"
-        typeit_strings:
-          - "AI can build everything"
-          - "But it cannot replace human"
-        imageUrl: "images/avatar.png"
-        imageTitle: "ZINUO"
-        imageWidth: 120
-        imageHeight: 120
+        enabled: false
+      landing:
+        hero:
+          name: "Zinuo Li"
+          title: "AI Infrastructure & Agent Architect"
+          tagline: "I help teams design and scale production-grade AI systems."
+          companies: "Former Dalio Family Office • Optiver • Ford Autonomic • Informatica"
+          typeit_strings:
+            - "From LLM Infrastructure to Multi-Agent Systems"
+            - "I build AI platforms that survive real-world scale"
+          cta:
+            - name: "Book a Consultation"
+              url: "mailto:zinuo.lee@gmail.com"
+            - name: "View Projects"
+              url: "#projects"
+            - name: "Read Articles"
+              url: "/posts/"
+        services:
+          title: "What I Do"
+          items:
+            - name: "Agent System Design"
+              description: "Design reliable multi-agent architectures."
+              details:
+                - "Workflow Agents"
+                - "Research Agents"
+                - "SRE Agents"
+                - "Internal Copilots"
+            - name: "AI Infrastructure"
+              description: "Build scalable foundations."
+              details:
+                - "Model Gateway"
+                - "LLM Platform"
+                - "Evaluation Framework"
+                - "Observability"
+            - name: "Technical Advisory"
+              description: "Help engineering leaders make decisions."
+              details:
+                - "Architecture Review"
+                - "AI Roadmap"
+                - "Cost Optimization"
+                - "Hiring & Interviews"
+        projects:
+          title: "Selected Projects"
+          items:
+            - name: "Digital Ray"
+              description: "AI platform inspired by Ray Dalio principles."
+              tags:
+                - "Knowledge Retrieval"
+                - "Long-term Memory"
+                - "Agent Orchestration"
+                - "Architecture"
+                - "Platform Design"
+            - name: "AI Platform @ Optiver"
+              description: "Building production AI capabilities."
+              tags:
+                - "LiteLLM"
+                - "Agent Hosting"
+                - "Model Routing"
+                - "Platform Engineering"
+            - name: "SRE Agent Framework"
+              description: "Designing agents that diagnose incidents."
+              tags:
+                - "Alert Analysis"
+                - "Evidence Gathering"
+                - "Root Cause Workflow"
+            - name: "Deep Research Agent"
+              description: "Multi-step autonomous research system."
+              tags:
+                - "Planning"
+                - "Verification"
+                - "Evidence Tracking"
+                - "Citation Generation"
+        expertise:
+          title: "Expertise"
+          items:
+            - name: "AI Systems"
+              skills:
+                - "Agent Systems"
+                - "Multi-Agent Design"
+                - "RAG"
+                - "LLMOps"
+            - name: "Infrastructure"
+              skills:
+                - "Kubernetes"
+                - "Cloud Architecture"
+                - "Platform Engineering"
+                - "Distributed Systems"
+            - name: "AI Platform"
+              skills:
+                - "Model Gateway"
+                - "Evaluation"
+                - "Observability"
+                - "Cost Optimization"
+            - name: "Leadership"
+              skills:
+                - "System Design Interviews"
+                - "Engineering Growth"
+                - "Technical Strategy"
+        writing:
+          title: "Writing"
+          posts:
+            - title: "System Design: Deep Research Agent"
+              url: "/posts/system-design-deep-research-agent/"
+        socialproof:
+          title: "Experience"
+          companies:
+            - "Optiver"
+            - "Dalio Family Office"
+            - "Ford Autonomic"
+            - "Informatica"
+        contact:
+          title: "Let's Talk"
+          description: "Interested in AI Architecture, Agent Systems, or Technical Advisory?"
+          cta: "Book a Call"
+          cta_url: "mailto:zinuo.lee@gmail.com"
+          links:
+            - name: "Email"
+              url: "mailto:zinuo.lee@gmail.com"
+              icon: "email"
+            - name: "LinkedIn"
+              url: "https://www.linkedin.com/in/arnoldzl/"
+              icon: "linkedin"
+            - name: "GitHub"
+              url: "https://github.com/weekend-ai"
+              icon: "github"
+
   zh:
     languageCode: zh-cn
     languageName: "中文"
     title: '子诺的主页'
     contentDir: "content/zh"
     weight: 2
+    menus:
+      main:
+        - name: 文章
+          url: /posts/
+          weight: 10
+        - name: 搜索
+          url: /search/
+          weight: 20
+        - name: 简历
+          url: /cv/
+          weight: 30
     params:
       profileMode:
-        enabled: true
-        title: "你好, 👋"
-        subtitle: "欢迎来到我的空间"
-        typeit_strings:
-          - "AI 可以创造一切"
-          - "但它无法取代人类"
-        imageUrl: "images/avatar.png"
-        imageTitle: "ZINUO"
-        imageWidth: 120
-        imageHeight: 120
+        enabled: false
+      landing:
+        hero:
+          name: "李子诺"
+          title: "AI 基础设施 & Agent 架构师"
+          tagline: "帮助团队设计和扩展生产级 AI 系统。"
+          companies: "前 Dalio Family Office • Optiver • Ford Autonomic • Informatica"
+          typeit_strings:
+            - "从 LLM 基础设施到多 Agent 系统"
+            - "构建经得起真实规模考验的 AI 平台"
+          cta:
+            - name: "预约咨询"
+              url: "mailto:zinuo.lee@gmail.com"
+            - name: "查看项目"
+              url: "#projects"
+            - name: "阅读文章"
+              url: "/posts/"
+        services:
+          title: "我的服务"
+          items:
+            - name: "Agent 系统设计"
+              description: "设计可靠的多 Agent 架构。"
+              details:
+                - "工作流 Agent"
+                - "研究 Agent"
+                - "SRE Agent"
+                - "内部 Copilot"
+            - name: "AI 基础设施"
+              description: "构建可扩展的基础架构。"
+              details:
+                - "模型网关"
+                - "LLM 平台"
+                - "评估框架"
+                - "可观测性"
+            - name: "技术顾问"
+              description: "帮助技术负责人做出决策。"
+              details:
+                - "架构评审"
+                - "AI 路线图"
+                - "成本优化"
+                - "招聘与面试"
+        projects:
+          title: "精选项目"
+          items:
+            - name: "Digital Ray"
+              description: "受 Ray Dalio 原则启发的 AI 平台。"
+              tags:
+                - "知识检索"
+                - "长期记忆"
+                - "Agent 编排"
+                - "架构设计"
+                - "平台设计"
+            - name: "AI Platform @ Optiver"
+              description: "构建生产级 AI 能力。"
+              tags:
+                - "LiteLLM"
+                - "Agent 托管"
+                - "模型路由"
+                - "平台工程"
+            - name: "SRE Agent 框架"
+              description: "设计诊断事故的 Agent。"
+              tags:
+                - "告警分析"
+                - "证据收集"
+                - "根因分析工作流"
+            - name: "Deep Research Agent"
+              description: "多步骤自主研究系统。"
+              tags:
+                - "规划"
+                - "验证"
+                - "证据追踪"
+                - "引用生成"
+        expertise:
+          title: "专业领域"
+          items:
+            - name: "AI 系统"
+              skills:
+                - "Agent 系统"
+                - "多 Agent 设计"
+                - "RAG"
+                - "LLMOps"
+            - name: "基础设施"
+              skills:
+                - "Kubernetes"
+                - "云架构"
+                - "平台工程"
+                - "分布式系统"
+            - name: "AI 平台"
+              skills:
+                - "模型网关"
+                - "评估"
+                - "可观测性"
+                - "成本优化"
+            - name: "领导力"
+              skills:
+                - "系统设计面试"
+                - "工程师成长"
+                - "技术战略"
+        writing:
+          title: "文章"
+          posts:
+            - title: "系统设计：Deep Research Agent"
+              url: "/posts/system-design-deep-research-agent/"
+        socialproof:
+          title: "工作经历"
+          companies:
+            - "Optiver"
+            - "Dalio Family Office"
+            - "Ford Autonomic"
+            - "Informatica"
+        contact:
+          title: "联系我"
+          description: "对 AI 架构、Agent 系统或技术顾问感兴趣？"
+          cta: "预约沟通"
+          cta_url: "mailto:zinuo.lee@gmail.com"
+          links:
+            - name: "邮箱"
+              url: "mailto:zinuo.lee@gmail.com"
+              icon: "email"
+            - name: "LinkedIn"
+              url: "https://www.linkedin.com/in/arnoldzl/"
+              icon: "linkedin"
+            - name: "GitHub"
+              url: "https://github.com/weekend-ai"
+              icon: "github"
 
-# All other parameters that are not language-specific remain here
 baseURL: 'https://www.zinuo.me/'
 theme: 'PaperMod'
 
 params:
   ShowBreadCrumbs: true
-  socialIcons: # optional
+  socialIcons:
     - name: "linkedin"
       url: "https://www.linkedin.com/in/arnoldzl/"
     - name: "instagram"
@@ -56,14 +308,8 @@ params:
   postSearch: true
   groupByYear: true
   toc: true
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
-
-# 添加 Hugo Modules 配置
-# module:
-#   imports:
-#     # - path: github.com/zino-lee/hugo-bearblog-neo # 错误的路径
-#     - path: github.com/rokcso/hugo-bearblog-neo # 正确的路径
+  outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON

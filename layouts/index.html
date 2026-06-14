@@ -1,0 +1,142 @@
+{{- define "main" }}
+
+{{- $landing := .Site.Language.Params.landing }}
+
+{{/* Section 1: Hero */}}
+<section class="landing-hero">
+    <div class="landing-container">
+        <div class="hero-content">
+            <img class="hero-avatar" src="/images/avatar.png" alt="{{ $landing.hero.name }}" width="120" height="120" draggable="false" />
+            <p class="hero-title">{{ $landing.hero.title }}</p>
+            <p class="hero-tagline">{{ $landing.hero.tagline }}</p>
+            <p class="hero-companies">{{ $landing.hero.companies }}</p>
+            <div class="hero-cta">
+                {{- range $landing.hero.cta }}
+                <a href="{{ .url }}" class="cta-btn">{{ .name }}</a>
+                {{- end }}
+            </div>
+            <p class="hero-statement" id="hero-typeit"
+                data-typeit-strings='{{ $landing.hero.typeit_strings | jsonify }}'>
+            </p>
+        </div>
+    </div>
+</section>
+
+{{/* Section 2: What I Do */}}
+<section class="landing-section" id="services">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.services.title }}</h2>
+        <div class="cards-grid cards-3">
+            {{- range $landing.services.items }}
+            <div class="card">
+                <h3 class="card-title">{{ .name }}</h3>
+                <p class="card-desc">{{ .description }}</p>
+                <ul class="card-list">
+                    {{- range .details }}
+                    <li>{{ . }}</li>
+                    {{- end }}
+                </ul>
+            </div>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{/* Section 3: Selected Projects */}}
+<section class="landing-section" id="projects">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.projects.title }}</h2>
+        <div class="cards-grid cards-2">
+            {{- range $landing.projects.items }}
+            <div class="card">
+                <h3 class="card-title">{{ .name }}</h3>
+                <p class="card-desc">{{ .description }}</p>
+                <div class="card-tags">
+                    {{- range .tags }}
+                    <span class="tag">{{ . }}</span>
+                    {{- end }}
+                </div>
+            </div>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{/* Section 4: Expertise */}}
+<section class="landing-section" id="expertise">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.expertise.title }}</h2>
+        <div class="cards-grid cards-4">
+            {{- range $landing.expertise.items }}
+            <div class="card card-compact">
+                <h3 class="card-title">{{ .name }}</h3>
+                <div class="card-tags">
+                    {{- range .skills }}
+                    <span class="tag">{{ . }}</span>
+                    {{- end }}
+                </div>
+            </div>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{/* Section 5: Writing */}}
+<section class="landing-section" id="writing">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.writing.title }}</h2>
+        <div class="writing-list">
+            {{- range $landing.writing.posts }}
+            <a href="{{ .url }}" class="writing-item">
+                <span class="writing-title">{{ .title }}</span>
+                <span class="writing-arrow">&rarr;</span>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{/* Section 6: Social Proof */}}
+<section class="landing-section" id="experience">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.socialproof.title }}</h2>
+        <div class="companies-list">
+            {{- range $landing.socialproof.companies }}
+            <span class="company-name">{{ . }}</span>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{/* Section 7: Contact */}}
+<section class="landing-section landing-contact" id="contact">
+    <div class="landing-container">
+        <h2 class="section-title">{{ $landing.contact.title }}</h2>
+        <p class="contact-desc">{{ $landing.contact.description }}</p>
+        <a href="{{ $landing.contact.cta_url }}" class="cta-btn cta-primary">{{ $landing.contact.cta }}</a>
+        <div class="contact-links">
+            {{- range $landing.contact.links }}
+            <a href="{{ .url }}" class="contact-link" target="_blank" rel="noopener">{{ .name }}</a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const el = document.getElementById('hero-typeit');
+    if (el) {
+        const strings = JSON.parse(el.getAttribute('data-typeit-strings'));
+        new TypeIt('#hero-typeit', {
+            strings: strings,
+            speed: 80,
+            loop: true,
+            breakLines: false,
+            waitUntilVisible: true
+        }).go();
+    }
+});
+</script>
+
+{{- end }}
