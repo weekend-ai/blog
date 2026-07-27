@@ -3,245 +3,211 @@ languages:
   en:
     languageCode: en-us
     languageName: "English"
-    title: 'ZINUO HOME'
+    title: "Zinuo"
     contentDir: "content/en"
     weight: 1
     menus:
       main:
-        - name: Articles
+        - name: Notes
           url: /posts/
           weight: 10
-        - name: Search
-          url: /search/
+        - name: Now
+          url: /now/
           weight: 20
         - name: Resume
           url: /cv/
           weight: 30
     params:
+      description: "Zinuo builds products with AI and shares what he learns along the way."
       profileMode:
         enabled: false
       landing:
         hero:
           name: "Zinuo Li"
-          title: "AI Infrastructure & Agent Architect"
-          tagline: "I help teams design and scale production-grade AI systems."
-          companies: "Former Dalio Family Office • Ford Autonomic • Informatica"
-          typeit_strings:
-            - "From LLM Infrastructure to Multi-Agent Systems"
-            - "I build AI platforms that survive real-world scale"
+          kicker: "Hi, I'm Zinuo."
+          headline: "I build products with AI."
+          tagline: "I like taking a new AI capability and pushing it until it becomes something people can actually use. This is where I share the experiments, mistakes, and lessons along the way."
+          motto: "Curious about what AI makes possible. Serious about product. Happy to share the process."
           cta:
-            - name: "View Projects"
+            - name: "See what I'm building"
               url: "#projects"
-            - name: "Read Articles"
+              primary: true
+            - name: "Read my notes"
               url: "/posts/"
-        services:
-          title: "What I Do"
+            - name: "GitHub"
+              url: "https://github.com/weekend-ai"
+        passions:
+          title: "What I care about"
+          description: "AI moves fast. I stay grounded by building real things and paying attention to how people use them."
           items:
-            - name: "Agent System Design"
-              description: "Design reliable multi-agent architectures."
+            - name: "AI products"
+              description: "The interesting part starts after the demo: choosing the right problem, shaping the experience, and earning repeat use."
               details:
-                - "Workflow Agents"
-                - "Research Agents"
-                - "SRE Agents"
-                - "Internal Copilots"
-            - name: "AI Infrastructure"
-              description: "Build scalable foundations."
+                - "Product discovery"
+                - "Rapid prototypes"
+                - "Feedback loops"
+                - "The small details"
+            - name: "Agents that do real work"
+              description: "I explore agents with tools, memory, and useful boundaries. The goal is less magic and more dependable help."
               details:
-                - "Model Gateway"
-                - "LLM Platform"
-                - "Evaluation Framework"
-                - "Observability"
-            - name: "Technical Advisory"
-              description: "Help engineering leaders make decisions."
+                - "Research workflows"
+                - "Personal AI"
+                - "SRE and debugging"
+                - "Human-AI collaboration"
+            - name: "Sharing the process"
+              description: "Writing forces me to be clear. I share build notes, system-design lessons, and the failures that changed my mind."
               details:
-                - "Architecture Review"
-                - "AI Roadmap"
-                - "Cost Optimization"
-                - "Hiring & Interviews"
+                - "Build notes"
+                - "System design"
+                - "Open-source experiments"
+                - "What failed and why"
         projects:
-          title: "Selected Projects"
+          title: "What I'm building"
+          description: "A few ongoing experiments at the intersection of AI, product, and systems."
           items:
             - name: "Digital Ray"
-              description: "AI platform inspired by Ray Dalio principles."
+              description: "A personal thinking companion that connects principles, memory, and everyday decisions."
               tags:
-                - "Knowledge Retrieval"
-                - "Long-term Memory"
-                - "Agent Orchestration"
-                - "Architecture"
-                - "Platform Design"
+                - "Personal AI"
+                - "Memory"
+                - "Knowledge"
+                - "Product Design"
             - name: "SRE Agent Framework"
-              description: "Designing agents that diagnose incidents."
+              description: "An AI teammate that gathers evidence and helps engineers reason through incidents."
               tags:
-                - "Alert Analysis"
-                - "Evidence Gathering"
-                - "Root Cause Workflow"
+                - "Agent Workflow"
+                - "Tool Use"
+                - "Reliability"
             - name: "Deep Research Agent"
-              description: "Multi-step autonomous research system."
+              description: "A research experience that plans the work, checks the evidence, and keeps citations attached."
               tags:
-                - "Planning"
+                - "Research"
                 - "Verification"
-                - "Evidence Tracking"
-                - "Citation Generation"
-        expertise:
-          title: "Expertise"
+                - "Evidence UX"
+        loop:
+          title: "The loop I trust"
+          description: "Most of my best learning follows the same path."
           items:
-            - name: "AI Systems"
-              skills:
-                - "Agent Systems"
-                - "Multi-Agent Design"
-                - "RAG"
-                - "LLMOps"
-            - name: "Infrastructure"
-              skills:
-                - "Kubernetes"
-                - "Cloud Architecture"
-                - "Platform Engineering"
-                - "Distributed Systems"
-            - name: "AI Platform"
-              skills:
-                - "Model Gateway"
-                - "Evaluation"
-                - "Observability"
-                - "Cost Optimization"
-            - name: "Leadership"
-              skills:
-                - "System Design Interviews"
-                - "Engineering Growth"
-                - "Technical Strategy"
+            - name: "Explore"
+              description: "Follow a question until it becomes concrete enough to test."
+            - name: "Build"
+              description: "Turn the idea into something I can use, then put it in front of other people."
+            - name: "Share"
+              description: "Write down the useful parts while they are still fresh."
         writing:
-          title: "Writing"
+          title: "Notes from the build"
+          description: "I write to work out what I think and to leave a useful trail for the next experiment."
           posts:
             - title: "System Design: Deep Research Agent"
               url: "/posts/system-design-deep-research-agent/"
-        socialproof:
-          title: "Experience"
-          companies:
-            - "Dalio Family Office"
-            - "Ford Autonomic"
-            - "Informatica"
+          all_label: "Browse all notes"
+          all_url: "/posts/"
 
   zh:
     languageCode: zh-cn
     languageName: "中文"
-    title: '子诺的主页'
+    title: "子诺"
     contentDir: "content/zh"
     weight: 2
     menus:
       main:
-        - name: 文章
+        - name: 随笔
           url: /posts/
           weight: 10
-        - name: 搜索
-          url: /search/
+        - name: 近况
+          url: /now/
           weight: 20
         - name: 简历
           url: /cv/
           weight: 30
     params:
+      description: "子诺喜欢用 AI 做产品，也愿意分享一路上的实验、踩坑和思考。"
       profileMode:
         enabled: false
       landing:
         hero:
           name: "李子诺"
-          title: "AI 基础设施 & Agent 架构师"
-          tagline: "帮助团队设计和扩展生产级 AI 系统。"
-          companies: "前 Dalio Family Office • Ford Autonomic • Informatica"
-          typeit_strings:
-            - "从 LLM 基础设施到多 Agent 系统"
-            - "构建经得起真实规模考验的 AI 平台"
+          kicker: "你好，我是子诺。"
+          headline: "我喜欢用 AI 做产品。"
+          tagline: "我喜欢把新的 AI 能力一路做成真正有人愿意用的产品。这里记录我的实验、踩坑，以及一路学到的东西。"
+          motto: "拥抱 AI，认真做产品，也愿意分享过程。"
           cta:
-            - name: "查看项目"
+            - name: "看看我在做什么"
               url: "#projects"
-            - name: "阅读文章"
+              primary: true
+            - name: "读读我的随笔"
               url: "/posts/"
-        services:
-          title: "我的服务"
+            - name: "GitHub"
+              url: "https://github.com/weekend-ai"
+        passions:
+          title: "我在意的事"
+          description: "AI 变化很快。我更愿意通过真正做产品，观察人们怎么用，来理解这些变化。"
           items:
-            - name: "Agent 系统设计"
-              description: "设计可靠的多 Agent 架构。"
+            - name: "AI 产品"
+              description: "Demo 之后才是真正有意思的部分：选对问题、打磨体验，让人愿意第二次打开它。"
               details:
-                - "工作流 Agent"
-                - "研究 Agent"
-                - "SRE Agent"
-                - "内部 Copilot"
-            - name: "AI 基础设施"
-              description: "构建可扩展的基础架构。"
+                - "产品发现"
+                - "快速原型"
+                - "用户反馈"
+                - "小而重要的细节"
+            - name: "真正能做事的 Agent"
+              description: "我在探索有工具、有记忆、也有清晰边界的 Agent。比起魔法感，我更在意它能不能稳定帮上忙。"
               details:
-                - "模型网关"
-                - "LLM 平台"
-                - "评估框架"
-                - "可观测性"
-            - name: "技术顾问"
-              description: "帮助技术负责人做出决策。"
+                - "研究工作流"
+                - "个人 AI"
+                - "SRE 与调试"
+                - "人与 AI 协作"
+            - name: "分享过程"
+              description: "写下来会逼我把事情想清楚。我会分享构建笔记、系统设计，以及那些让我改变想法的失败。"
               details:
-                - "架构评审"
-                - "AI 路线图"
-                - "成本优化"
-                - "招聘与面试"
+                - "构建笔记"
+                - "系统设计"
+                - "开源实验"
+                - "失败与复盘"
         projects:
-          title: "精选项目"
+          title: "我正在构建"
+          description: "几个长期进行中的实验，围绕 AI、产品和系统展开。"
           items:
             - name: "Digital Ray"
-              description: "受 Ray Dalio 原则启发的 AI 平台。"
+              description: "一个连接原则、记忆和日常决策的个人思考伙伴。"
               tags:
-                - "知识检索"
+                - "个人 AI"
                 - "长期记忆"
-                - "Agent 编排"
-                - "架构设计"
-                - "平台设计"
-            - name: "SRE Agent 框架"
-              description: "设计诊断事故的 Agent。"
+                - "知识连接"
+                - "产品设计"
+            - name: "SRE Agent Framework"
+              description: "一个会收集证据、帮助工程师一起推理故障的 AI 队友。"
               tags:
-                - "告警分析"
-                - "证据收集"
-                - "根因分析工作流"
+                - "Agent 工作流"
+                - "工具调用"
+                - "可靠性"
             - name: "Deep Research Agent"
-              description: "多步骤自主研究系统。"
+              description: "一个会规划研究、核对证据，并始终保留引用关系的研究产品。"
               tags:
-                - "规划"
-                - "验证"
-                - "证据追踪"
-                - "引用生成"
-        expertise:
-          title: "专业领域"
+                - "深度研究"
+                - "事实核验"
+                - "证据链呈现"
+        loop:
+          title: "我相信的循环"
+          description: "我学得最好的时候，通常都在重复同一个过程。"
           items:
-            - name: "AI 系统"
-              skills:
-                - "Agent 系统"
-                - "多 Agent 设计"
-                - "RAG"
-                - "LLMOps"
-            - name: "基础设施"
-              skills:
-                - "Kubernetes"
-                - "云架构"
-                - "平台工程"
-                - "分布式系统"
-            - name: "AI 平台"
-              skills:
-                - "模型网关"
-                - "评估"
-                - "可观测性"
-                - "成本优化"
-            - name: "领导力"
-              skills:
-                - "系统设计面试"
-                - "工程师成长"
-                - "技术战略"
+            - name: "探索"
+              description: "沿着一个问题追下去，直到它具体到可以验证。"
+            - name: "构建"
+              description: "把想法做成自己能用的东西，再交给真实的人试一试。"
+            - name: "分享"
+              description: "趁记忆还新鲜，把真正有用的部分写下来。"
         writing:
-          title: "文章"
+          title: "构建途中的随笔"
+          description: "我用写作理清自己的想法，也给下一次实验留下一条能回看的路。"
           posts:
             - title: "系统设计：Deep Research Agent"
               url: "/posts/system-design-deep-research-agent/"
-        socialproof:
-          title: "工作经历"
-          companies:
-            - "Dalio Family Office"
-            - "Ford Autonomic"
-            - "Informatica"
+          all_label: "浏览全部随笔"
+          all_url: "/posts/"
 
-baseURL: 'https://www.zinuo.me/'
-theme: 'PaperMod'
+baseURL: "https://www.zinuo.me/"
+theme: "PaperMod"
 
 params:
   ShowBreadCrumbs: true
@@ -258,8 +224,9 @@ params:
   postSearch: true
   groupByYear: true
   toc: true
-  outputs:
-    home:
-      - HTML
-      - RSS
-      - JSON
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
