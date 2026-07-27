@@ -119,19 +119,6 @@ languages:
             - "Dalio Family Office"
             - "Ford Autonomic"
             - "Informatica"
-        contact:
-          title: "Let's Talk"
-          description: "Want to discuss AI architecture or agent systems? Reach out through any of the links below."
-          links:
-            - name: "Email"
-              url: "mailto:zinuo.lee@gmail.com"
-              icon: "email"
-            - name: "LinkedIn"
-              url: "https://www.linkedin.com/in/arnoldzl/"
-              icon: "linkedin"
-            - name: "GitHub"
-              url: "https://github.com/weekend-ai"
-              icon: "github"
 
   zh:
     languageCode: zh-cn
@@ -252,19 +239,6 @@ languages:
             - "Dalio Family Office"
             - "Ford Autonomic"
             - "Informatica"
-        contact:
-          title: "联系我"
-          description: "想聊聊 AI 架构或 Agent 系统？欢迎通过以下方式联系我。"
-          links:
-            - name: "邮箱"
-              url: "mailto:zinuo.lee@gmail.com"
-              icon: "email"
-            - name: "LinkedIn"
-              url: "https://www.linkedin.com/in/arnoldzl/"
-              icon: "linkedin"
-            - name: "GitHub"
-              url: "https://github.com/weekend-ai"
-              icon: "github"
 
 baseURL: 'https://www.zinuo.me/'
 theme: 'PaperMod'

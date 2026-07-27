@@ -108,19 +108,6 @@
     </div>
 </section>
 
-{{/* Section 7: Contact */}}
-<section class="landing-section landing-contact" id="contact">
-    <div class="landing-container">
-        <h2 class="section-title">{{ $landing.contact.title }}</h2>
-        <p class="contact-desc">{{ $landing.contact.description }}</p>
-        <div class="contact-links">
-            {{- range $landing.contact.links }}
-            <a href="{{ .url }}" class="contact-link" target="_blank" rel="noopener">{{ .name }}</a>
-            {{- end }}
-        </div>
-    </div>
-</section>
-
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
