@@ -25,13 +25,11 @@ languages:
           name: "Zinuo Li"
           title: "AI Infrastructure & Agent Architect"
           tagline: "I help teams design and scale production-grade AI systems."
-          companies: "Former Dalio Family Office • Optiver • Ford Autonomic • Informatica"
+          companies: "Former Dalio Family Office • Ford Autonomic • Informatica"
           typeit_strings:
             - "From LLM Infrastructure to Multi-Agent Systems"
             - "I build AI platforms that survive real-world scale"
           cta:
-            - name: "Book a Consultation"
-              url: "mailto:zinuo.lee@gmail.com"
             - name: "View Projects"
               url: "#projects"
             - name: "Read Articles"
@@ -71,13 +69,6 @@ languages:
                 - "Agent Orchestration"
                 - "Architecture"
                 - "Platform Design"
-            - name: "AI Platform @ Optiver"
-              description: "Building production AI capabilities."
-              tags:
-                - "LiteLLM"
-                - "Agent Hosting"
-                - "Model Routing"
-                - "Platform Engineering"
             - name: "SRE Agent Framework"
               description: "Designing agents that diagnose incidents."
               tags:
@@ -125,15 +116,12 @@ languages:
         socialproof:
           title: "Experience"
           companies:
-            - "Optiver"
             - "Dalio Family Office"
             - "Ford Autonomic"
             - "Informatica"
         contact:
           title: "Let's Talk"
-          description: "Interested in AI Architecture, Agent Systems, or Technical Advisory?"
-          cta: "Book a Call"
-          cta_url: "mailto:zinuo.lee@gmail.com"
+          description: "Want to discuss AI architecture or agent systems? Reach out through any of the links below."
           links:
             - name: "Email"
               url: "mailto:zinuo.lee@gmail.com"
@@ -170,13 +158,11 @@ languages:
           name: "李子诺"
           title: "AI 基础设施 & Agent 架构师"
           tagline: "帮助团队设计和扩展生产级 AI 系统。"
-          companies: "前 Dalio Family Office • Optiver • Ford Autonomic • Informatica"
+          companies: "前 Dalio Family Office • Ford Autonomic • Informatica"
           typeit_strings:
             - "从 LLM 基础设施到多 Agent 系统"
             - "构建经得起真实规模考验的 AI 平台"
           cta:
-            - name: "预约咨询"
-              url: "mailto:zinuo.lee@gmail.com"
             - name: "查看项目"
               url: "#projects"
             - name: "阅读文章"
@@ -216,13 +202,6 @@ languages:
                 - "Agent 编排"
                 - "架构设计"
                 - "平台设计"
-            - name: "AI Platform @ Optiver"
-              description: "构建生产级 AI 能力。"
-              tags:
-                - "LiteLLM"
-                - "Agent 托管"
-                - "模型路由"
-                - "平台工程"
             - name: "SRE Agent 框架"
               description: "设计诊断事故的 Agent。"
               tags:
@@ -270,15 +249,12 @@ languages:
         socialproof:
           title: "工作经历"
           companies:
-            - "Optiver"
             - "Dalio Family Office"
             - "Ford Autonomic"
             - "Informatica"
         contact:
           title: "联系我"
-          description: "对 AI 架构、Agent 系统或技术顾问感兴趣？"
-          cta: "预约沟通"
-          cta_url: "mailto:zinuo.lee@gmail.com"
+          description: "想聊聊 AI 架构或 Agent 系统？欢迎通过以下方式联系我。"
           links:
             - name: "邮箱"
               url: "mailto:zinuo.lee@gmail.com"

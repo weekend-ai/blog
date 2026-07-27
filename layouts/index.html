@@ -113,7 +113,6 @@
     <div class="landing-container">
         <h2 class="section-title">{{ $landing.contact.title }}</h2>
         <p class="contact-desc">{{ $landing.contact.description }}</p>
-        <a href="{{ $landing.contact.cta_url }}" class="cta-btn cta-primary">{{ $landing.contact.cta }}</a>
         <div class="contact-links">
             {{- range $landing.contact.links }}
             <a href="{{ .url }}" class="contact-link" target="_blank" rel="noopener">{{ .name }}</a>
