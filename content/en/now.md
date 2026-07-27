@@ -3,16 +3,20 @@ title = "Now"
 weight = 10
 +++
 
-# Bear
+I am exploring how AI can become more personal, useful, and trustworthy through products people can use every day.
 
-Website: https://bearblog.dev
+## Building
 
-There is a website obesity crisis. Bloated websites are full of scripts, ads, and trackers slowing your readers down every time they try to read your well-crafted content.
+- A Digital Avatar that connects memory, principles, and everyday decisions
+- Agent workflows that can research, verify evidence, and explain their reasoning
+- Small product experiments that test where AI genuinely helps
 
-Bear is all you need to build a fantastic and optimized site or blog. It works perfectly on **any** viewing device. All you need to focus on is writing good content.
+## Learning
 
-Bear makes it simple to publish content online and grow an audience while keeping pages tiny, fast, and **optimized for search engines.**
+- How people build trust with AI over time
+- How memory changes the usefulness of a personal assistant
+- How product details turn a capable model into a product worth returning to
 
-Each page is ~5kb.
+## Sharing
 
-Learn more and contribute on [GitHub](https://github.com/HermanMartinus/bearblog).
+I write down what works, what fails, and what changes my mind while the details are still fresh.

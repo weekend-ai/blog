@@ -65,8 +65,8 @@ languages:
           title: "What I'm building"
           description: "A few ongoing experiments at the intersection of AI, product, and systems."
           items:
-            - name: "Digital Ray"
-              description: "A personal thinking companion that connects principles, memory, and everyday decisions."
+            - name: "Digital Avatar"
+              description: "A personal AI avatar that connects memory, principles, and everyday decisions."
               tags:
                 - "Personal AI"
                 - "Memory"
@@ -168,8 +168,8 @@ languages:
           title: "我正在构建"
           description: "几个长期进行中的实验，围绕 AI、产品和系统展开。"
           items:
-            - name: "Digital Ray"
-              description: "一个连接原则、记忆和日常决策的个人思考伙伴。"
+            - name: "Digital Avatar"
+              description: "一个连接记忆、原则和日常决策的个人 AI 分身。"
               tags:
                 - "个人 AI"
                 - "长期记忆"
@@ -211,6 +211,9 @@ theme: "PaperMod"
 
 params:
   ShowBreadCrumbs: true
+  hideFooter: true
+  schema:
+    publisherType: "Person"
   socialIcons:
     - name: "linkedin"
       url: "https://www.linkedin.com/in/arnoldzl/"
