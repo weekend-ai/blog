@@ -22,7 +22,7 @@
 }
 
 .profile img:hover {
-    transform: translateY(-2px) rotate(-2deg);
+    transform: rotate(360deg);
 }
 
 /* Personal landing page */
@@ -96,7 +96,7 @@
 }
 
 .hero-avatar:hover {
-    transform: translateY(-3px) rotate(-2deg);
+    transform: rotate(360deg);
     box-shadow: var(--maker-soft-shadow);
 }
 
