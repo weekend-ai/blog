@@ -10,7 +10,7 @@
         <h1>{{ .Title }}</h1>
         <p>{{ if $zh }}我正在探索怎样通过产品，让 AI 变得更个人、更实用，也更值得信任。{{ else }}I am exploring how AI can become more personal, useful, and trustworthy through products people can use every day.{{ end }}</p>
       </div>
-      <p><a href="/admin/health/">{{ if $zh }}录入健康数据{{ else }}Add a reading{{ end }}</a></p>
+      <p class="health-actions"><a class="health-add-reading" href="/admin/health/"><span aria-hidden="true">＋</span> {{ if $zh }}录入健康数据{{ else }}Add a reading{{ end }}</a></p>
       <p id="health-load-status" role="status"></p>
       <section class="native-health" aria-labelledby="native-health-title">
         <button class="native-health-toggle" type="button" aria-expanded="true" aria-controls="native-health-content"><span class="native-health-toggle-left"><span class="native-health-dot"></span><span id="native-health-title">Health</span></span><span class="native-health-toggle-meta">{{ if $zh }}2026/08/04 — 2026/09/24{{ else }}Aug 4 — Sep 24, 2026{{ end }} <span class="native-health-chevron">⌄</span></span></button>
@@ -19,8 +19,8 @@
           <div class="native-chart-toolbar"><div><strong>{{ if $zh }}趋势{{ else }}Trend{{ end }}</strong><span id="native-chart-range">{{ if $zh }}共 38 次测量{{ else }}38 readings{{ end }}</span></div><div class="native-chart-switch" role="group"><button type="button" class="active" data-metric="weight">{{ if $zh }}体重{{ else }}Weight{{ end }}</button><button type="button" data-metric="bodyFat">{{ if $zh }}体脂{{ else }}Body fat{{ end }}</button><button type="button" data-metric="muscle">{{ if $zh }}肌肉量{{ else }}Muscle{{ end }}</button><button type="button" data-metric="muscleRate">{{ if $zh }}肌肉率{{ else }}Muscle %{{ end }}</button></div></div>
           <div class="native-chart-wrap"><svg id="native-health-chart" class="native-health-chart" viewBox="0 0 900 300" preserveAspectRatio="none" role="img"></svg><div id="native-health-tooltip" class="native-health-tooltip" role="status" aria-live="polite"></div></div>
           <div class="native-chart-legend"><span id="native-chart-min"></span><span id="native-chart-baseline"></span><span id="native-chart-max"></span></div>
-          <div class="native-log-heading"><strong>{{ if $zh }}每日记录{{ else }}Daily readings{{ end }}</strong><span>{{ if $zh }}悬停或滑动图表查看当天详情{{ else }}Hover or slide across the chart for details{{ end }}</span></div>
-          <div class="native-log-table-wrap"><table class="native-log-table"><thead><tr><th>{{ if $zh }}日期{{ else }}Date{{ end }}</th><th>{{ if $zh }}体重{{ else }}Weight{{ end }}</th><th>{{ if $zh }}体脂{{ else }}Body fat{{ end }}</th><th>{{ if $zh }}详情{{ else }}Details{{ end }}</th></tr></thead><tbody id="native-health-table"></tbody></table></div>
+          <div class="native-log-heading"><strong id="native-log-title">{{ if $zh }}每日记录{{ else }}Daily readings{{ end }}</strong><span>{{ if $zh }}在下方列表内滚动查看更多记录{{ else }}Scroll within the list for more readings{{ end }}</span></div>
+          <div class="native-log-table-wrap" tabindex="0" role="region" aria-labelledby="native-log-title"><table class="native-log-table"><thead><tr><th>{{ if $zh }}日期{{ else }}Date{{ end }}</th><th>{{ if $zh }}体重{{ else }}Weight{{ end }}</th><th>{{ if $zh }}体脂{{ else }}Body fat{{ end }}</th><th>{{ if $zh }}详情{{ else }}Details{{ end }}</th></tr></thead><tbody id="native-health-table"></tbody></table></div>
           <p class="native-health-note">{{ if $zh }}数据来自米家体脂秤晨间测量。水分、盐分和测量时间会影响单日读数，所以这里优先看长期趋势。{{ else }}Data comes from morning Mi Body Composition readings. Hydration, sodium, and timing can move a single reading, so this page emphasizes the longer trend.{{ end }}</p>
         </div>
       </section>
