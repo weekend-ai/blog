@@ -1,0 +1,7 @@
+{
+  "name": "zinuo-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node --test tests/health.test.mjs"},
+  "dependencies": {"jose": "^6.1.0"}
+}

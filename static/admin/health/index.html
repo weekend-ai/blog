@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>健康记录 · Zinuo</title>
+<style>
+:root{color-scheme:light dark;font:16px/1.6 system-ui,sans-serif}body{max-width:640px;margin:auto;padding:24px;background:light-dark(#fafaf8,#171918);color:light-dark(#222,#eee)}a{color:inherit}header{display:flex;justify-content:space-between}h1{font-size:28px}form{display:grid;gap:18px}label{display:grid;gap:6px}input,button{font:inherit;padding:12px;border:1px solid #8886;border-radius:10px;width:100%;box-sizing:border-box}button{cursor:pointer;background:#256348;color:white}button:disabled{opacity:.5;cursor:wait}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}small{color:light-dark(#626862,#adb5ad)}details .grid{margin-top:14px}#status{min-height:26px}#status.error{color:light-dark(#a31d1d,#ff9999)}nav{display:flex;gap:16px;margin-top:24px}nav button{width:auto;background:transparent;color:inherit}summary{cursor:pointer}@media(max-width:420px){.grid{grid-template-columns:1fr}}
+</style>
+<header><a href="/zh/now/">← Now</a><a href="/cdn-cgi/access/logout">退出登录</a></header>
+<h1>每日健康记录</h1><p id="mode">加载中…</p>
+<form id="entry">
+<label>测量日期<input name="date" type="date" required></label>
+<fieldset id="fields" disabled style="border:0;padding:0;margin:0"><div class="grid">
+<label>体重 · kg<input name="weight" type="number" step="0.01" min="1" max="500" required></label>
+<label>体脂率 · %<input name="bodyFat" type="number" step="0.1" min="0" max="100" required></label>
+<label>肌肉量 · kg<input name="muscle" type="number" step="0.1" min="0.1" max="500" required></label>
+<label>肌肉率 · %<input name="muscleRate" type="number" step="0.1" min="0" max="100" placeholder="优先填写报告原值"></label>
+</div><small>肌肉率留空时，趋势图会显示计算估计值。</small>
+<details><summary>其他指标（选填）</summary><div class="grid">
+<label>脂肪量 · kg<input name="fatMass" type="number" step="0.1" min="0" max="500"></label>
+<label>内脏脂肪等级<input name="visceral" type="number" step="1" min="1" max="60"></label>
+<label>心率 · 次/分<input name="heart" type="number" step="1" min="20" max="250"></label>
+</div></details></fieldset>
+<button id="save" disabled>保存记录</button><div id="status" role="status" aria-live="polite"></div>
+</form><nav><button id="reload">重新加载该日期</button><button id="export">导出全部记录</button></nav>
+<script type="module" src="/admin/health/form.js"></script></html>

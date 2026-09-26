@@ -25,3 +25,5 @@ Thumbs.db
 .env.*
 .cursor/
 design-doc/
+.wrangler/
+.dev.vars*

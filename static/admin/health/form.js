@@ -1,0 +1,14 @@
+const form=document.querySelector('#entry'),date=form.elements.date,fields=document.querySelector('#fields'),save=document.querySelector('#save'),status=document.querySelector('#status'),mode=document.querySelector('#mode');
+const names=['weight','bodyFat','muscle','muscleRate','fatMass','visceral','heart'];
+let revision=0,loadedDate='',dirty=false,sequence=0,saving=false;
+function message(text,error=false){status.textContent=text;status.classList.toggle('error',error);}
+async function api(url,options){const res=await fetch(url,{...options,cache:'no-store'});if(!res.headers.get('content-type')?.includes('application/json'))throw new Error('登录已过期，请刷新页面重新登录。输入仍保留在表单中。');const data=await res.json();if(!res.ok)throw new Error(data.error||'请求失败，请重试');return data;}
+async function load(){if(saving)return;const ticket=++sequence;fields.disabled=true;save.disabled=true;message('正在读取…');const selected=date.value;try{const row=await api('/api/admin/health?date='+encodeURIComponent(selected));if(ticket!==sequence)return;for(const n of names)form.elements[n].value=row?.[n]??'';revision=row?.revision??0;loadedDate=selected;dirty=false;mode.textContent=revision?'该日期已有记录，可修改后保存。':'新增当天测量记录';save.textContent=revision?'更新记录':'保存记录';fields.disabled=false;save.disabled=false;message('');}catch(e){if(ticket===sequence)message(e.message,true);}}
+date.value=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai'}).format(new Date());
+date.addEventListener('change',()=>{if(dirty&&!confirm('切换日期会丢弃尚未保存的输入，继续吗？')){date.value=loadedDate;return;}load();});
+fields.addEventListener('input',()=>{dirty=true;});
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+form.addEventListener('submit',async e=>{e.preventDefault();if(saving||date.value!==loadedDate)return;saving=true;const payload={date:loadedDate,revision};for(const n of names)payload[n]=form.elements[n].value===''?null:Number(form.elements[n].value);save.disabled=true;date.disabled=true;fields.disabled=true;message('保存中…');try{const result=await api('/api/admin/health',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});revision=result.revision;dirty=false;save.textContent='更新记录';mode.textContent='该日期已有记录，可修改后保存。';message('已保存。Now 页面刷新后即可看到最新数据。');}catch(err){message(err.message,true);}finally{saving=false;save.disabled=false;date.disabled=false;fields.disabled=false;}});
+document.querySelector('#reload').onclick=()=>{if(!dirty||confirm('重新加载会丢弃尚未保存的输入，继续吗？'))load();};
+document.querySelector('#export').onclick=async()=>{try{const rows=await api('/api/admin/health');const url=URL.createObjectURL(new Blob([JSON.stringify(rows,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='health-records.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(e){message(e.message,true);}};
+load();

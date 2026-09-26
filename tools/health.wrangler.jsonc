@@ -1,0 +1,10 @@
+{
+  "name": "zinuo-health-record",
+  "compatibility_date": "2026-09-26",
+  "d1_databases": [{
+    "binding": "HEALTH_DB",
+    "database_name": "zinuo-health-record",
+    "database_id": "6dcfee45-2887-4437-b401-36da2c4e8059",
+    "migrations_dir": "../migrations/health"
+  }]
+}
